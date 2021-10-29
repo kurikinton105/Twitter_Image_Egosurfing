@@ -6,7 +6,7 @@ dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
 api_url = os.environ.get("api_url")
-# print(api_url) 読み込めているかの確認
+print(api_url) 読み込めているかの確認
 prediction_key = os.environ.get("prediction_key")
 image_url_test = os.environ.get("image_url_test")
 consumer_key = os.environ.get("consumer_key")
