@@ -1,0 +1,2 @@
+# Twitter_Image_Egosurfing
+自分の作品が戦利品ツイートに紛れ込んでいたSlackに通知を入れてくれるアプリケーション
