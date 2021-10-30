@@ -28,19 +28,19 @@ jobs:
       
       # .env
       - name: Create .env file
-        with:
-          envkey_ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
-          envkey_ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
-          envkey_API_URL: ${{ secrets.API_URL }}
-          envkey_CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
-          envkey_CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
-          envkey_IMAGE_URL_TEST: ${{ secrets.IMAGE_URL_TEST }}
-          envkey_PREDICTION_KEY: ${{ secrets.PREDICTION_KEY }}
-          envkey_SEARCH_WORD: ${{ secrets.SEARCH_WORD }}
-          envkey_WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-          some_other_variable: foobar
-          directory: <directory_name>
-          file_name: .env
+      - shell: bash
+        run: |
+          touch .env
+          echo "ACCESS_KEY= ${{ secrets.ACCESS_KEY }}" >> .env
+          echo "ACCESS_SECRET= ${{ secrets.ACCESS_SECRET }}" >> .env
+          echo "API_URL= ${{ secrets.API_URL }}" >> .env
+          echo "CONSUMER_KEY= ${{ secrets.CONSUMER_KEY }}" >> .env
+          echo "CONSUMER_SECRET= ${{ secrets.CONSUMER_SECRET }}" >> .env
+          echo "IMAGE_URL_TEST= ${{ secrets.IMAGE_URL_TEST }}" >> .env
+          echo "PREDICTION_KEY= ${{ secrets.PREDICTION_KEY }}" >> .env
+          echo "SEARCH_WORD= ${{ secrets.SEARCH_WORD }}" >> .env
+          echo "WEBHOOK_URL= ${{ secrets.WEBHOOK_URL }}" >> .env
+
       # Install Python
       - name: Setup Python
         uses: actions/setup-python@v2
