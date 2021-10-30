@@ -1,4 +1,4 @@
 requests
-tweepy
+tweepy==3.9.0
 pytz
 python-dotenv
