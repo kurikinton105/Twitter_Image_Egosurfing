@@ -28,7 +28,19 @@ jobs:
       
       # .env
       - name: Create .env file
-        run: echo "${{ secrets.ENV_PROD }}" > .env
+        with:
+          envkey_ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+          envkey_ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
+          envkey_API_URL: ${{ secrets.API_URL }}
+          envkey_CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+          envkey_CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+          envkey_IMAGE_URL_TEST: ${{ secrets.IMAGE_URL_TEST }}
+          envkey_PREDICTION_KEY: ${{ secrets.PREDICTION_KEY }}
+          envkey_SEARCH_WORD: ${{ secrets.SEARCH_WORD }}
+          envkey_WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          some_other_variable: foobar
+          directory: <directory_name>
+          file_name: .env
       # Install Python
       - name: Setup Python
         uses: actions/setup-python@v2
